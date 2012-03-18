@@ -7,6 +7,7 @@
 <meta name="keywords" content="" />
 <link rel="stylesheet" href="" />
 <style>
+	#dir{margin:10px;padding:15px;line-height:24px;border:1px solid gray;background:#ccc;}
 	body{font-family:"微软雅黑";}
 	.node{margin-left:15px;color:green;}
 </style>
@@ -29,8 +30,8 @@
 <script type="text/javascript">
 var dir=document.getElementById("dir");
 dir.innerHTML=dir.innerHTML.replace(/[^:\/]\/{1}(?!\/)|\s{1}\/{2}|\n|\t+\/|-{4}\n/g,function(a){
-	if(a=='/' || a== '\n' || a==' //' || a=="----\n"){
-		return ({'/':'|---','\n':'</span><br/>',' //':'<span class="node">//','----\n':'<br />'})[a];
+	if(/\n\/|\n|\/\/|-{4}\n/.test(a)){
+		return ({'\n/':'|---','\n':'</span><br />',' //':'<span class="node">//','----\n':'<br />'})[a];
 	}else{
 		return (new Array(a.length)).join("|&nbsp;&nbsp;&nbsp;") + '|---';
 	}
