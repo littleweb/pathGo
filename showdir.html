@@ -39,26 +39,26 @@ pre{width:550px;margin:10px;padding:15px;line-height:24px;overflow:hidden;font-f
 </pre>
 <h2>渲染后的显示样式</h2>
 <div id="dir">
-/root :根目录
-	/app :应用目录
-		/baidu :百度
-		/google :谷歌
-		/qq :腾讯
-		/other :其他
-----
-	/data
-		/baidu
-		/google :谷歌
-----
-    /sys :系统
+	/root :根目录
+		/app :应用目录
+			/baidu :百度
+			/google :谷歌
+			/qq :腾讯
+			/other :其他
+	----
+		/data
+			/baidu
+			/google :谷歌
+	----
+		/sys :系统
 </div>
 <script type="text/javascript">
 var dir=document.getElementById("dir");
-dir.innerHTML=dir.innerHTML.replace(/[^:\/]\/{1}(?!\/)|\s{1}:{1}|\n|\t+\/|-{4}\n/g,function(a){
-	if(/\n\/|\n|\s{1}:{1}|-{4}\n/.test(a)){
+dir.innerHTML=dir.innerHTML.replace(/^\n/,'').replace(/\n|\s{1}:{1}|\t+\/|-{4}\n/g,function(a){
+	if(/\n|\s{1}:{1}|-{4}\n/.test(a)){
 		return ({'\n/':'|---','\n':'</span><br />',' :':'<span class="node">//','----\n':'<br />'})[a];
 	}else{
-		return (new Array(a.length)).join("|&nbsp;&nbsp;&nbsp;") + '|---';
+		return (new Array(a.length-1)).join("|&nbsp;&nbsp;&nbsp;") + '|---';
 	}
 });
 </script>
