@@ -7,12 +7,30 @@
 <meta name="keywords" content="" />
 <link rel="stylesheet" href="" />
 <style>
-	#dir{margin:10px;padding:15px;line-height:24px;border:1px solid gray;background:#ccc;}
-	body{font-family:"微软雅黑";}
-	.node{margin-left:15px;color:green;}
+body{font-family:"微软雅黑";font-size:16px;}
+textarea{width:550px;height:300px;margin:10px;padding:15px;line-height:24px;overflow:hidden;font-family:"微软雅黑";font-size:16px;border:1px solid gray;background:#ccc;}
+#dir{width:550px;margin:10px;padding:15px;line-height:24px;border:1px solid gray;background:#ccc;}
+
+.node{margin-left:15px;color:green;}
 </style>
 </head>
 <body>
+<h2>文档代码</h2>
+<textarea>
+/root //根目录
+	/app //应用目录
+		/baidu //百度
+		/google //谷歌
+		/qq //腾讯
+		/other //其他
+----
+	/data
+		/baidu
+		/google //谷歌
+----
+    /sys //系统
+</textarea>
+<h2>渲染后的显示样式</h2>
 <div id="dir">
 /root //根目录
 	/app //应用目录
